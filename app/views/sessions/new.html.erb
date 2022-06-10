@@ -3,6 +3,11 @@
 <%= form_with :url => "/sessions" do |form| %>
   
   <p>
+
+  <%= form.label "username"%>
+  <%= form.text_field "username"%>
+  <%= form.label "password"%>
+  <%= form.password_field "password"%>
     <%= form.submit "Login" %>
   </p>
 <% end %>
