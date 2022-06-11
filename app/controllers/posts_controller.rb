@@ -8,10 +8,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @post["title"] = params["post"]["title"]
-    @post["image"] = params["post"]["image"]
+    #@post["image"] = params["post"]["image"]
     @post["description"] = params["post"]["description"]
     @post["posted_on"] = params["post"]["posted_on"]
     @post["place_id"] = params["post"]["place_id"]
+    @post.uploaded_image.attach(params["post"]["uploaded_image"])
    # @post["user_id"] = @current_user["id"]
     @post.save
     redirect_to "/places/#{@post["place_id"]}"

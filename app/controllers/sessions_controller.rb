@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session["users_id"] = nil
+    session["user_id"] = nil
     redirect_to "/"
   end
 end
